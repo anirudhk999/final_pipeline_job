@@ -23,6 +23,8 @@ def plotgraph(stats):
 
 def main():
     FILES_DIR = 'C:\\DEVOPS_ASSESMENT\\GRAPH'
+    for i in os.listdir(FILES_DIR):
+        os.remove(FILES_DIR + "\\" + i)
     count = 1
     stats = {}
     for i in os.listdir(FILES_DIR):
