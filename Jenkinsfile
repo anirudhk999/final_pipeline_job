@@ -67,6 +67,30 @@ pipeline {
                 bat 'mvn test'
             }
         }
+
+        stage('Setup Python')
+        {
+            steps{
+                bat 'python -m venv venv2'
+                bat '.\\venv2\\Scripts\\activate'
+            }
+        }
+        
+        stage('Install All Dependencies')
+        {
+            steps{
+                bat 'pip install -r "C:\\Project_J\\project_j\\src\\requirements.txt"'
+            }
+        }
+        
+        stage('Run Tests')
+        {
+            steps
+            {
+                bat 'python -m pytest "C:\\Project_J\\project_j\\test\\test.py"'
+            }
+        }
+    }
  
         // stage('SonarQube Analysis') {
         //     steps {
@@ -80,6 +104,7 @@ pipeline {
     post {
         always
         {
+            bat '.\\venv2\\Scripts\\deactivate'
             cleanWs()
         }
         // failure 
