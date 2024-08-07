@@ -58,7 +58,7 @@ pipeline {
  
         stage('Run App.java') {
             steps {
-                bat 'java -cp target\\classes com.yourpackage.App'
+                bat 'java -cp target\\classes sortingalgo.App'
             }
         }
  
