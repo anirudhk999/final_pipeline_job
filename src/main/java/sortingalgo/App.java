@@ -5,6 +5,7 @@ import java.math.*;
 import java.lang.reflect.Array;
 import java.util.*;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
@@ -115,8 +116,26 @@ public class App
         return i + 1;
     }
 
-    public static void writeListToFile(List<Double> list, String fileName) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+    // public static void writeListToFile(List<Double> list, String fileName) {
+    //     try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+    //         for (Double d : list) {
+    //             writer.write(d.toString());
+    //             writer.newLine();
+    //         }
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
+
+    public static void writeListToFile(List<Double> list, String directory, String fileName) {
+        File dir = new File(directory);
+        if (!dir.exists()) {
+            dir.mkdirs(); // Create the directory if it does not exist
+        }
+        
+        File file = new File(dir, fileName);
+        
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
             for (Double d : list) {
                 writer.write(d.toString());
                 writer.newLine();
@@ -125,9 +144,11 @@ public class App
             e.printStackTrace();
         }
     }
+ 
 
     public static void sortAlgoStats()
     {
+        String directory = "C:\\DEVOPS_ASSESMENT\\GRAPH";
         List<Double> mergeSortAnalytics = new ArrayList<Double>();
         List<Double> quickSortAnalytics = new ArrayList<Double>();
         List<Double> bubbleSortAnalytics = new ArrayList<Double>();
@@ -261,11 +282,11 @@ public class App
         }
 
         System.out.println(insertionSortAnalytics);
-        writeListToFile(mergeSortAnalytics, "mergeSort.txt");
-        writeListToFile(quickSortAnalytics, "quickSort.txt");
-        writeListToFile(selectionSortAnalytics, "selectionSort.txt");
-        writeListToFile(insertionSortAnalytics, "insertionSort.txt");
-        writeListToFile(bubbleSortAnalytics, "bubbleSort.txt");
+        writeListToFile(mergeSortAnalytics, directory, "mergeSort.txt");
+        writeListToFile(quickSortAnalytics, directory, "quickSort.txt");
+        writeListToFile(selectionSortAnalytics, directory, "selectionSort.txt");
+        writeListToFile(insertionSortAnalytics, directory, "insertionSort.txt");
+        writeListToFile(bubbleSortAnalytics, directory ,"bubbleSort.txt");
     }
 
 

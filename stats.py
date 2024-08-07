@@ -22,12 +22,12 @@ def plotgraph(stats):
     plt.savefig('C:\\DEVOPS_ASSESMENT\\GRAPH\\stats.png')
 
 def main():
-    DIRECTORY = os.curdir + '\\src\\main\\java\\sortingalgo'
+    FILES_DIR = 'C:\\DEVOPS_ASSESMENT\\GRAPH'
     count = 1
     stats = {}
-    for i in os.listdir(DIRECTORY):
+    for i in os.listdir(FILES_DIR):
         if i.endswith('.txt'):
-            stats[count] = extract_stats(DIRECTORY + "\\" + i)
+            stats[count] = extract_stats(FILES_DIR + "\\" + i)
             count += 1
     plotgraph(stats)
 
