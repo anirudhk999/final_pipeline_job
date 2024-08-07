@@ -250,57 +250,57 @@ public class App
   
     public static void main(String[] args) {
         sortAlgoStats();
-        Scanner scanner = new Scanner(System.in);
+        // Scanner scanner = new Scanner(System.in);
         
-        System.out.println("Enter the numbers to sort (space-separated):");
-        String input = scanner.nextLine();
-        String[] numbers = input.split(" ");
-        int[] arr = new int[numbers.length];
-        for (int i = 0; i < numbers.length; i++) {
-            arr[i] = Integer.parseInt(numbers[i]);
-        }
+        // System.out.println("Enter the numbers to sort (space-separated):");
+        // String input = scanner.nextLine();
+        // String[] numbers = input.split(" ");
+        // int[] arr = new int[numbers.length];
+        // for (int i = 0; i < numbers.length; i++) {
+        //     arr[i] = Integer.parseInt(numbers[i]);
+        // }
  
-        System.out.println("Choose sorting algorithm:");
-        System.out.println("1. Bubble Sort");
-        System.out.println("2. Selection Sort");
-        System.out.println("3. Insertion Sort");
-        System.out.println("4. Merge Sort");
-        System.out.println("5. Quick Sort");
-        int choice = scanner.nextInt();
+        // System.out.println("Choose sorting algorithm:");
+        // System.out.println("1. Bubble Sort");
+        // System.out.println("2. Selection Sort");
+        // System.out.println("3. Insertion Sort");
+        // System.out.println("4. Merge Sort");
+        // System.out.println("5. Quick Sort");
+        // int choice = scanner.nextInt();
  
-        System.out.println("Sort in descending order? (true/false):");
-        boolean reverse = scanner.nextBoolean();
+        // System.out.println("Sort in descending order? (true/false):");
+        // boolean reverse = scanner.nextBoolean();
  
-        long startTime = System.nanoTime();
+        // long startTime = System.nanoTime();
  
-        switch (choice) {
-            case 1:
-                bubbleSort(arr, reverse);
-                break;
-            case 2:
-                selectionSort(arr, reverse);
-                break;
-            case 3:
-                insertionSort(arr, reverse);
-                break;
-            case 4:
-                mergeSort(arr, reverse);
-                break;
-            case 5:
-                quickSort(arr, reverse);
-                break;
-            default:
-                System.out.println("Invalid choice");
-                return;
-        }
+        // switch (choice) {
+        //     case 1:
+        //         bubbleSort(arr, reverse);
+        //         break;
+        //     case 2:
+        //         selectionSort(arr, reverse);
+        //         break;
+        //     case 3:
+        //         insertionSort(arr, reverse);
+        //         break;
+        //     case 4:
+        //         mergeSort(arr, reverse);
+        //         break;
+        //     case 5:
+        //         quickSort(arr, reverse);
+        //         break;
+        //     default:
+        //         System.out.println("Invalid choice");
+        //         return;
+        // }
  
-        long endTime = System.nanoTime();
-        long duration = (endTime - startTime) / 1000000;  // Convert to milliseconds
+        // long endTime = System.nanoTime();
+        // long duration = (endTime - startTime) / 1000000;  // Convert to milliseconds
  
-        System.out.println("Sorted array:");
-        System.out.println(Arrays.toString(arr));
-        System.out.println("Time taken: " + duration + " ms");
+        // System.out.println("Sorted array:");
+        // System.out.println(Arrays.toString(arr));
+        // System.out.println("Time taken: " + duration + " ms");
  
-        scanner.close();
+        // scanner.close();
     }
 }
