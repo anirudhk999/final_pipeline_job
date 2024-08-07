@@ -79,7 +79,7 @@ pipeline {
         stage('Install All Dependencies')
         {
             steps{
-                bat 'pip install -r "C:\\Project_J\\project_j\\src\\requirements.txt"'
+                bat 'pip install -r "requirements.txt"'
             }
         }
         
@@ -87,7 +87,7 @@ pipeline {
         {
             steps
             {
-                bat 'python -m pytest "C:\\Project_J\\project_j\\test\\test.py"'
+                bat 'python stats.py'
             }
         }
     }
