@@ -7,7 +7,7 @@ def extract_stats(file):
         return [float(line.strip()) for line in f]
 
 def plotgraph(stats):
-    if os.path.exists('stats.png'):
+    if os.path.exists('C:\\DEVOPS_ASSESMENT\\GRAPH\\stats.png'):
         os.remove('stats.png')
     algos = ['bubble', 'insertion', 'merge', 'quick', 'selection']
     plt.figure(figsize=(10, 10))
@@ -19,7 +19,7 @@ def plotgraph(stats):
     plt.xlabel('Array Size')
     plt.ylabel('Time')
     plt.title('STATS')
-    plt.savefig('stats.png')
+    plt.savefig('C:\\DEVOPS_ASSESMENT\\GRAPH\\stats.png')
 
 def main():
     DIRECTORY = os.curdir + '\\src\\main\\java\\sortingalgo'
