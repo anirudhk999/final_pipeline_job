@@ -52,19 +52,19 @@ pipeline {
  
         stage('Build') {
             steps {
-                sh 'mvn clean package -DskipTests'
+                bat 'mvn clean package -DskipTests'
             }
         }
  
         stage('Run App.java') {
             steps {
-                sh 'java -cp target/classes com.yourpackage.App'
+                bat 'java -cp target\\classes com.yourpackage.App'
             }
         }
  
         stage('Unit Tests') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
  
