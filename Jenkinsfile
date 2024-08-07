@@ -83,7 +83,7 @@ pipeline {
             }
         }
         
-        stage('Run Tests')
+        stage('Run Python Script')
         {
             steps
             {
