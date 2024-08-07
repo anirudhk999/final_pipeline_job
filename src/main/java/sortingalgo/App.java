@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.math.*;
 import java.lang.reflect.Array;
 import java.util.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.List;
 /**
  * Hello world!
  *
@@ -109,6 +113,17 @@ public class App
         arr[i + 1] = arr[high];
         arr[high] = temp;
         return i + 1;
+    }
+
+    public static void writeListToFile(List<Double> list, String fileName) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+            for (Double d : list) {
+                writer.write(d.toString());
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void sortAlgoStats()
@@ -246,7 +261,16 @@ public class App
         }
 
         System.out.println(insertionSortAnalytics);
+        writeListToFile(mergeSortAnalytics, "mergeSort.txt");
+        writeListToFile(quickSortAnalytics, "quickSort.txt");
+        writeListToFile(selectionSortAnalytics, "selectionSort.txt");
+        writeListToFile(insertionSortAnalytics, "insertionSort.txt");
+        writeListToFile(bubbleSortAnalytics, "bubbleSort.txt");
     }
+
+
+    
+    
   
     public static void main(String[] args) {
         sortAlgoStats();
