@@ -31,7 +31,8 @@ def main():
             count += 1
     plotgraph(stats)
     for i in os.listdir(FILES_DIR):
-        os.remove(FILES_DIR + "\\" + i)
+        if i.endswith('.txt'):
+            os.remove(FILES_DIR + "\\" + i)
 
 if __name__ == "__main__":
     main()
